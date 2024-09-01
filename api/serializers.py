@@ -3,5 +3,5 @@ from . import models
 
 class UploadSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Uploads
+        model = models.Upload
         fields = ['file']

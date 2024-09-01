@@ -8,12 +8,12 @@ fs = FileSystemStorage(location=settings.MEDIA_ROOT + 'uploads')
 
 # Create your models here.
 
-class Uploads(models.Model):
+class Upload(models.Model):
     file = models.ImageField(storage=fs)
 
 
 
-@receiver(post_delete, sender=Uploads)
+@receiver(post_delete, sender=Upload)
 def photo_post_delete_handler(sender, **kwargs):
     photo = kwargs['instance']
     storage, path = photo.file.storage, photo.file.path

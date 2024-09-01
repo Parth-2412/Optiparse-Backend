@@ -32,7 +32,7 @@ def detect(request):
     if file_name == None or type(file_name) != str:
         return JsonResponse({ 'file_name' : ["This field may not be null"]}, status = 400)
     print(file_name)
-    uploads = models.Uploads.objects.filter(file=file_name)
+    uploads = models.Upload.objects.filter(file=file_name)
     if len(uploads) == 0 :
         return JsonResponse({ 'file_name' : ["No such file"]}, status = 400)
     return JsonResponse({ }, status = 201)

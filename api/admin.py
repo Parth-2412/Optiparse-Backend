@@ -2,6 +2,6 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
-from .models import Uploads
+from .models import Upload
 
-admin.site.register(Uploads)
+admin.site.register(Upload)
