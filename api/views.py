@@ -34,5 +34,5 @@ def detect(request):
     print(file_name)
     uploads = models.Upload.objects.filter(file=file_name)
     if len(uploads) == 0 :
-        return JsonResponse({ 'file_name' : ["No such file"]}, status = 400)
+        return JsonResponse({ 'file_name' : ["No such file"]}, status = 404)
     return JsonResponse({ }, status = 201)
